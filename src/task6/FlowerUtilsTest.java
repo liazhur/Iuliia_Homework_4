@@ -14,9 +14,9 @@ public class FlowerUtilsTest extends Main{
     public void testJoin() throws Exception {
         FlowerUtils a = new FlowerUtils();
 
-        Flower[] bouquet1 = {Main.rose, Main.tulip, camomile};
+        Flower[] bouquet1 = {rose, tulip, camomile};
         Flower [] bouquet2 = {rose, sunflower, camomile};
-        Flower []expResult = Flower[] {rose, tulip,  camomile, rose, sunflower, camomile};
+        Flower []expResult =  {rose, tulip,  camomile, rose, sunflower, camomile};
 
         Flower [] res = a.join(bouquet1, bouquet2);
         assertEquals(res, expResult);
