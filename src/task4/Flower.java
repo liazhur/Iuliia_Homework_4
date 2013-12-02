@@ -54,6 +54,7 @@ public class Flower  {
 
     @Override
     public String toString() {
+        //local code review (vtegza): it is useful to have all information in to string @ 02.12.13
 //        return "Flower{" +
 //                "flowerName='" + flowerName + '\'' +
 //                ", flowerColor='" + flowerColor + '\'' +

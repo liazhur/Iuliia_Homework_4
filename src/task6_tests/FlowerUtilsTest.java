@@ -12,6 +12,7 @@ import java.util.Random;
 
 import static junit.framework.Assert.assertEquals;
 
+//local code review (vtegza): this should not be an abstract class @ 02.12.13
 public abstract class FlowerUtilsTest {
 //    private Flower[] flowers1 ;
 //    private Flower[] flowers2 ;
@@ -86,6 +87,7 @@ public abstract class FlowerUtilsTest {
         Arrays.sort(forTestJoinedArr);
 
         joinedArr.equals(forTestJoinedArr);
+        //local code review (vtegza): you should use comparator @ 02.12.13
         return joinedArr.compareTo(forTestJoinedArr);
            }
 

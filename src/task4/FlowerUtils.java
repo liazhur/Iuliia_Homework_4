@@ -21,6 +21,7 @@ public class FlowerUtils {
             if(!currVal.equals(null)){                  //null or what?
                 for (int j=i+1; j<a.length; j++) {
                     if(a[j]==currVal){
+                        //local code review (vtegza): I believe there should be if and you should use '==' operand for null comparator @ 02.12.13
                         a[j].equals(null);               //null or what?
                         count++;
                     }
@@ -32,6 +33,7 @@ public class FlowerUtils {
     }
 public static Flower[] commonVal(Flower[] a, Flower[] b){
     Flower[] commArr = new Flower[a.length];
+    //local code review (vtegza): foreach loop could be used here @ 02.12.13
     for (int i=0;i<a.length;i++){
         for(int j=0; j<b.length; j++){
             if(a[i]==b[j]){
@@ -45,10 +47,12 @@ public static Flower[] commonVal(Flower[] a, Flower[] b){
     public static Flower[] outerVal(Flower[] a, Flower[] b){
         Flower[] outerArr = new Flower[a.length];
         boolean isfound = false;
+        //local code review (vtegza): foreach loop could be used here @ 02.12.13
         for (int i=0;i<a.length;i++){
             isfound = false;
             for(int j=0; j<b.length; j++){
                 if(a[i]==b[j]){
+                    //local code review (vtegza): you can break after you found desire element @ 02.12.13
                     isfound= true;
                 }
             }
@@ -56,6 +60,7 @@ public static Flower[] commonVal(Flower[] a, Flower[] b){
                 System.out.println("Outer Flower: " + a[i]);
             }
         }
+        //local code review (vtegza): foreach loop could be used here @ 02.12.13
         for (int i=0;i<b.length;i++){
             isfound = false;
             for(int j=0; j<a.length; j++){
@@ -73,6 +78,7 @@ public static Flower[] commonVal(Flower[] a, Flower[] b){
         public static Flower[] leftJoin(Flower[] a, Flower[] b){
             Flower[] leftArr = new Flower[a.length+b.length];
             int k=0;
+            //local code review (vtegza): foreach loop could be used here @ 02.12.13
             for(int i = 0; i<a.length; i++){
                 leftArr[k++] = a[i];
                 for (int j=0; j < b.length; j++)
@@ -82,9 +88,11 @@ public static Flower[] commonVal(Flower[] a, Flower[] b){
                 }
             }
             Flower[] resultArr = new Flower[k];
+            //local code review (vtegza): use System.arraycopy(..) @ 02.12.13
             for (int i=0; i<k; i++)
                 resultArr[i] = leftArr[i];
 
+            //local code review (vtegza): use for each loop or just Arrays.toString(arr) @ 02.12.13
             for (int i = 0; i<resultArr.length; i++) System.out.println("Left Join: " + resultArr[i]);
             return resultArr;
         }
